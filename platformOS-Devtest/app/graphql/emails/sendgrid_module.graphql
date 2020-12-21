@@ -1,0 +1,6 @@
+mutation set_admin_pwd {
+  constant_set(name: "admin_pwd", value: "test1234") {
+    name
+    value
+  }
+}

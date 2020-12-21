@@ -1,0 +1,9 @@
+mutation set_sendgrid_key {
+  constant_set(
+    name: "sendgrid_api_key"
+    value: "igcMmXwlRJCVRRBI9kpkQQ"
+  ) {
+    name
+    value
+  }
+}

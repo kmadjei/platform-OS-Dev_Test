@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<link rel="stylesheet" href="{{ 'styles/app.css' | asset_url }}">
+    <title>SalonEverywhere Pre-Appointment COVID Screening Tool</title>
+</head>
+<body>
+    <nav>
+        <a href="#">
+          <img src="{{ 'images/salon-logo.jpg' | asset_url }}"  alt="SalonEverywhere-logo" width="60" height="60" >
+        </a>
+        <div class="nav-title">SalonEverywhere</div>
+    </nav>
+ 	{{ content_for_layout }}
+
+    <footer>
+        <div>&copy; Copyright 2020  SalonEverywhere</div>
+    </footer>
+
+</body>
+</html>

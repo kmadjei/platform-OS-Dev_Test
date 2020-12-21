@@ -1,0 +1,16 @@
+   <div class="container">
+        <main>
+            <h1>Welcome to SalonEverywhere Pre-Appointment COVID Screening Tool</h1>
+            <form method="POST" action="notify_email.php.liquid">
+                <label for="name">Name</label>
+                <input type="text" name="title" placeholder="Enter your name here">
+                <div class="red-text"><?php echo $errors['name']; ?></div>
+                <label for="email">Your Email</label>
+                <input type="text" name="email" placeholder="Enter your email here">
+                <div class="red-text"><?php echo $errors['email']; ?></div>
+                <input type="submit" name="submit" value="Submit" clas="btn">
+            </form>	
+        </main>
+
+    </div>
+    

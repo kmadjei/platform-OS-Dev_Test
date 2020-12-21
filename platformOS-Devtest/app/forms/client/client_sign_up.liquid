@@ -1,0 +1,52 @@
+---
+name: client_sign_up
+resource: client
+email_notifications:
+  - email_client
+resource_owner: anyone
+redirect_to: /sign-in
+fields:
+  email:
+  password:
+  first_name:
+    validation: { presence: true }
+  properties:
+    phone_number:
+      validation:
+        phone_number: true
+  profiles:
+    client:
+      properties:
+        enabled:
+          property_options:
+            default: true
+            readonly: true
+      validation:
+        presence: true
+    validation:
+      presence: true
+---
+
+{% form %}
+  <label for="first_name">First name</label>
+  <input name="{{ form.fields.first_name.name }}" value="{{ form.fields.first_name.value }}" id="first_name" type="text">
+  {% if form.errors.first_name %}
+    <p>{{ form.errors.first_name }}</p>
+  {% endif %}
+
+  <label for="email">Email</label>
+  <input name="{{ form.fields.email.name }}" value="{{ form.fields.email.value }}" id="email" type="email">
+  {% if form.errors.email %}
+    <p>{{ form.errors.email }}</p>
+  {% endif %}
+
+  <label for="password">Password</label>
+  <input name="{{ form.fields.password.name }}" id="password" type="password">
+  {% if form.errors.password %}
+    <p>{{ form.errors.password }}</p>
+  {% endif %}
+
+  <input value="{{ form.fields.profiles.client.properties.enabled.value }}" name="{{ form.fields.profiles.client.properties.enabled.name }}" type="hidden">
+
+  <button>Create</button>
+{% endform %}

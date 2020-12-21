@@ -1,0 +1,11 @@
+---
+method: post
+---
+{% parse_json form %}
+{
+  "email": "{{ form.email }}",
+  "first_name": "{{ form.name }}"
+}
+{% endparse_json %}
+
+{% graphql notify = 'emails/email_client', data: form %}
